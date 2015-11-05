@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "bc03b921-293b-a046-9928-3620dcd835ef++426",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "bc03b921-293b-a046-9928-3620dcd835ef++426" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "bc03b921-293b-a046-9928-3620dcd835ef++426" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "871559A6-DA2B-4E06-845A-45B0D54196FD",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "bc03b921-293b-a046-9928-3620dcd835ef++426" : "IShinhanBank"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ShinhanBank",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ShinhanBank.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/10.25.182.202\/svn\/SBANK_FROM2013_IOS_REPOSITORY",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "bc03b921-293b-a046-9928-3620dcd835ef++426"
+    }
+  ]
+}

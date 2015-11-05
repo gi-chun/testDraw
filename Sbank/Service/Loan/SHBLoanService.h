@@ -1,0 +1,93 @@
+//
+//  SHBLoanService.h
+//  ShinhanBank
+//
+//  Created by 차주현 on 12. 11. 15.
+//  Copyright (c) 2012년 (주)두베. All rights reserved.
+//
+
+#import "SHBBankingService.h"
+
+#define LOAN_MYLIMIT_JOB1_SERVICE 111000 // 예상대출한도조회 직업1
+#define LOAN_MYLIMIT_JOB2_SERVICE 111001 // 예상대출한도조회 직업2
+#define LOAN_MYLIMIT_JOB3_SERVICE 111002 // 예상대출한도조회 직업3
+#define LOAN_MYLIMIT_JOB4_SERVICE 111003 // 예상대출한도조회 직업4
+#define LOAN_MYLIMIT_POSITION_SERVICE 111004 // 예상대출한도조회 직위
+
+#define LOAN_4DAYS_CHECK 111005 // 예적금담보대출 4영업일 체크 알럿
+
+#define LOAN_SIMPLELOAN_SEARCH_SERVICE 111006 // 약정업체 간편대출가능업체 조회
+#define LOAN_L1550_SERVICE 111007 // 약정업체 간편대출 마케팅 동의여부 조회
+#define LOAN_L1560_SERVICE 111008 // 약정업체 간편대출 마케팅 동의여부 SET
+#define LOAN_E1800_SERVICE 111009 // 약정업체 간편대출 고객정보조회
+#define LOAN_BRANCH_SEARCH_SERVICE 111010 // 약정업체 간편대출 영업점 조회
+#define LOAN_L3210_SERVICE 111011 // 약정업체 간편대출 무방문 사이버론 고객정보조회
+#define LOAN_L3211_SERVICE 111012 // 약정업체 간편대출 무방문 사이버론 대출신청
+#define LOAN_L3223_SERVICE 111013 // 약정업체 간편대출 신청내역 조회, 직장인 무방문대출
+
+#define LOAN_C2315_SERVICE 111014 // 직장인 무방문대출 신청 마케팅 동의여부 조회
+#define LOAN_C2800_SERVICE 111015 // 직장인 무방문대출
+#define LOAN_C2316_SERVICE 111016 // 직장인 무방문대출 신청 마케팅 동의 완료
+#define LOAN_L3668_SERVICE 111017 // 직장인 무방문대출
+#define LOAN_L3661_SERVICE 111018 // 직장인 무방문대출
+#define LOAN_L3665_SERVICE 111019 // 직장인 무방문대출
+#define LOAN_L3664_SERVICE 111020 // 직장인 무방문대출
+#define LOAN_D3220_SERVICE 111021 // 직장인 무방문대출
+#define LOAN_L3662_SERVICE 111022 // 직장인 무방문대출
+#define LOAN_L3666_SERVICE 111023 // 직장인 무방문대출
+#define LOAN_L3224_SERVICE 111024 // 직장인 무방문대출 (한도)
+#define LOAN_L3225_SERVICE 111025 // 직장인 무방문대출 (건별)
+#define LOAN_C2092_SERVICE 111026 // 직장인 무방문대출 계좌확인
+#define LOAN_L3226_SERVICE 111027 // 직장인 무방문대출 (한도)
+#define LOAN_L3227_SERVICE 111028 // 직장인 무방문대출 (건별)
+#define LOAN_L3228_SERVICE 111029 // 직장인 무방문대출 (마이카대출 완료)
+#define LOAN_PRODUCT_LIST_SERVICE 111030 // 직장인 무방문대출 상품목록
+#define LOAN_PRODUCT_DETAIL_SERVICE 111031 // 직장인 무방문대출 상품목록 상세
+#define LOAN_INPUT_CHECK1_SERVICE 111032 // 직장인 무방문대출 입력1
+#define LOAN_INPUT_CHECK2_SERVICE 111033 // 직장인 무방문대출 입력2
+
+
+//SERVICE_ID, SERVICE_CODE, SERVICE_URL
+#define LOAN_SERVICE_INFO    @{  \
+@LOAN_MYLIMIT_JOB1_SERVICE : @[@"TASK", TASK_JOB_URL, @"REQUEST"], \
+@LOAN_MYLIMIT_JOB2_SERVICE : @[@"TASK", TASK_JOB_URL, @"REQUEST"], \
+@LOAN_MYLIMIT_JOB3_SERVICE : @[@"TASK", TASK_JOB_URL, @"REQUEST"], \
+@LOAN_MYLIMIT_JOB4_SERVICE : @[@"TASK", TASK_JOB_URL, @"REQUEST"], \
+@LOAN_MYLIMIT_POSITION_SERVICE : @[@"TASK", TASK_JOB_URL, @"REQUEST"], \
+@LOAN_4DAYS_CHECK : @[@"TASK", TASK_COMMON_URL, @"REQUEST"], \
+@LOAN_SIMPLELOAN_SEARCH_SERVICE : @[@"TASK", TASK_COMMON_URL, @"REQUEST"], \
+@LOAN_L1550_SERVICE : @[@"L1550", SERVICE_URL], \
+@LOAN_L1560_SERVICE : @[@"L1560", SERVICE_URL], \
+@LOAN_E1800_SERVICE : @[@"E1800", SERVICE_URL], \
+@LOAN_BRANCH_SEARCH_SERVICE : @[@"TASK", TASK_COMMON_URL, @"REQUEST"], \
+@LOAN_L3210_SERVICE : @[@"L3210", SERVICE_URL], \
+@LOAN_L3211_SERVICE : @[@"L3211", SERVICE_URL], \
+@LOAN_L3223_SERVICE : @[@"L3223", SERVICE_URL], \
+@LOAN_C2315_SERVICE : @[@"C2315", SERVICE_URL], \
+@LOAN_C2800_SERVICE : @[@"C2800", SERVICE_URL], \
+@LOAN_C2316_SERVICE : @[@"C2316", SERVICE_URL], \
+@LOAN_L3668_SERVICE : @[@"L3668", SERVICE_URL], \
+@LOAN_L3661_SERVICE : @[@"L3661", SERVICE_URL], \
+@LOAN_L3665_SERVICE : @[@"L3665", LOAN_SERVICE_URL], \
+@LOAN_L3664_SERVICE : @[@"L3664", LOAN_SERVICE_URL], \
+@LOAN_D3220_SERVICE : @[@"D3220", LOAN_SERVICE_URL], \
+@LOAN_L3662_SERVICE : @[@"L3662", SERVICE_URL], \
+@LOAN_L3666_SERVICE : @[@"L3666", SERVICE_URL], \
+@LOAN_L3224_SERVICE : @[@"L3224", SERVICE_URL], \
+@LOAN_L3225_SERVICE : @[@"L3225", SERVICE_URL], \
+@LOAN_C2092_SERVICE : @[@"C2092", SERVICE_URL], \
+@LOAN_L3226_SERVICE : @[@"L3226", SERVICE_URL], \
+@LOAN_L3227_SERVICE : @[@"L3227", SERVICE_URL], \
+@LOAN_L3228_SERVICE : @[@"L3228", SERVICE_URL], \
+@LOAN_PRODUCT_LIST_SERVICE : @[@"TASK", TASK_COMMON_URL, @"REQUEST"], \
+@LOAN_PRODUCT_DETAIL_SERVICE : @[@"TASK", TASK_COMMON_URL, @"REQUEST"], \
+@LOAN_INPUT_CHECK1_SERVICE : @[@"TASK", TASK_COMMON_URL, @"REQUEST"], \
+@LOAN_INPUT_CHECK2_SERVICE : @[@"TASK", TASK_COMMON_URL, @"REQUEST"], \
+};
+
+@interface SHBLoanService : SHBBankingService
+//{
+//    NSDictionary *accountInfoDic;
+//}
+//@property (nonatomic, assign) NSDictionary *accountInfoDic;
+@end
